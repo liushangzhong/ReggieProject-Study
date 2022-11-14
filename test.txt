@@ -1,2 +1,3 @@
 My name is XiaoMing.
 hello!
+My age is 19.
