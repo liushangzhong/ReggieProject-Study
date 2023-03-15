@@ -20,8 +20,8 @@ import lombok.experimental.Accessors;
  * 菜品及套餐分类
  * </p>
  *
- * @author anyi
- * @since 2022-05-24
+ * @author
+ * @since
  */
 @Data
 @EqualsAndHashCode(callSuper = false)

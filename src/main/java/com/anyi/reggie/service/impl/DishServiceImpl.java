@@ -174,6 +174,7 @@ public class DishServiceImpl extends ServiceImpl<DishMapper, Dish> implements Di
             BeanUtils.copyProperties(item, dishDto);
             String categoryName = categoryService.getById(item.getCategoryId()).getName();
             dishDto.setCategoryName(categoryName);
+            //关联菜品口味数据
             List<DishFlavor> favors = dishFlavorService.list(new LambdaQueryWrapper<DishFlavor>().eq(DishFlavor::getDishId, item.getId()));
             dishDto.setFlavors(favors);
             return dishDto;

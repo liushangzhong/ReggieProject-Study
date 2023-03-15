@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
  * 订单明细表 前端控制器
  * </p>
  *
- * @author anyi
- * @since 2022-05-25
+ * @author
+ * @since
  */
 @RestController
 @RequestMapping("/reggie/order-detail")

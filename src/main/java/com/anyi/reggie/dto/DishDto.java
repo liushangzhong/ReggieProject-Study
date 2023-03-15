@@ -9,8 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author 安逸i
- * @version 1.0
+ * @author
+ * @version
  */
 @Data
 public class DishDto extends Dish {

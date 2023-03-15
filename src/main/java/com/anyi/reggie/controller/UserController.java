@@ -27,7 +27,7 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 @RequestMapping("/user")
 public class UserController {
-
+//注入Redis对象
     @Resource
     private RedisTemplate myRedisTemplate;
 
@@ -42,14 +42,16 @@ public class UserController {
     @GetMapping("/code")
     public R getCode(String phone){
         String code = RandomUtil.randomNumbers(6);
-        myRedisTemplate.opsForValue().set("code", code,5, TimeUnit.MINUTES);
+        //将验证码存入到Redis中
+        myRedisTemplate.opsForValue().set("phone", code,5, TimeUnit.MINUTES);
         return R.success("发送验证码成功！");
     }
     @PostMapping("/login")
     public R login(@RequestBody LoginDto loginDto, HttpSession session){
         LambdaQueryWrapper<User> wrapper = new LambdaQueryWrapper<>();
         User user = userService.getOne(wrapper.eq(User::getPhone, loginDto.getPhone()));
-        String  is = (String)myRedisTemplate.opsForValue().get("code");
+        //从缓存中拿到验证码
+        String  is = (String)myRedisTemplate.opsForValue().get("phone");
         if (loginDto.getCode().equals(is)){
             User curUser = new User();
             if (user == null){
@@ -60,6 +62,8 @@ public class UserController {
                 curUser = user;
             }
             session.setAttribute("user", curUser);
+            //如果用户登录成功，就删除redis中缓存的验证
+            myRedisTemplate.delete("phone");
             return R.success(user);
         }
         return R.error("登录失败");

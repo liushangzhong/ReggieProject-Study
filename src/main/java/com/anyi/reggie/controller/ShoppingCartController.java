@@ -16,9 +16,6 @@ import java.util.List;
  * <p>
  * 购物车 前端控制器
  * </p>
- *
- * @author anyi
- * @since 2022-05-25
  */
 @RestController
 @RequestMapping("/shoppingCart")
@@ -48,6 +45,12 @@ public class ShoppingCartController {
         shoppingCartService.add(shoppingCart);
         return R.success("添加成功！");
     }
+
+    /**
+     * 清空购物车项功能
+     * @param shoppingCart
+     * @return
+     */
     @PostMapping("/sub")
     public R sub(@RequestBody ShoppingCart shoppingCart){
         shoppingCartService.sub(shoppingCart);

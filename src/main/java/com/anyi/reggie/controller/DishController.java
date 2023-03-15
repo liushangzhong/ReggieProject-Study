@@ -14,19 +14,18 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
  * <p>
  * 菜品管理 前端控制器
- * </p>
- *
- * @author anyi
- * @since 2022-05-24
  */
 @RestController
 @RequestMapping("/dish")
@@ -36,9 +35,11 @@ public class DishController {
     private DishService dishService;
     @Resource
     private CategoryService categoryService;
-
+    @Resource
+    RedisTemplate redisTemplate;
     @Resource
     private DishFlavorService dishFlavorService;
+
 
     /**
      * 添加菜品
@@ -84,6 +85,8 @@ public class DishController {
     @PutMapping
     public R update(@RequestBody DishDto dishDto){
         dishService.updateDish(dishDto);
+        Set keys = redisTemplate.keys("dish_*");
+        redisTemplate.delete(keys);
         return R.success("修改菜品成功！");
     }
 

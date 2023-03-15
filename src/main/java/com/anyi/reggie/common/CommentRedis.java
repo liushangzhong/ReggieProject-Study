@@ -1,8 +1,8 @@
 package com.anyi.reggie.common;
 
 /**
- * @author 安逸i
- * @version 1.0
+ * @author 刘上忠
+ * @version
  */
 public class CommentRedis {
     public static final String DISH_PREFIX = "dish_";

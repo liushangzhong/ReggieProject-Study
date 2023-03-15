@@ -11,8 +11,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupp
 import java.util.List;
 
 /**
- * @author 安逸i
- * @version 1.0
  * 静态资源映射
  */
 @Slf4j

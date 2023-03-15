@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.sql.SQLIntegrityConstraintViolationException;
 
 /**
- * @author 安逸i
- * @version 1.0
+ * @author
+ * @version
  */
 
 @ControllerAdvice

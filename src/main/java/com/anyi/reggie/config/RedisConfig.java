@@ -3,6 +3,7 @@ package com.anyi.reggie.config;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.cache.annotation.CachingConfigurerSupport;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
@@ -10,14 +11,13 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
-import javax.annotation.Resource;
-
 /**
- * @author 安逸i
+ * @author 刘上忠
  * @version 1.0
+ * Redis配置文件
  */
 @Configuration
-public class RedisConfig {
+public class RedisConfig extends CachingConfigurerSupport{
     @Bean("myRedisTemplate")
     public RedisTemplate<String ,Object> redisTemplate(RedisConnectionFactory redisConnectionFactory){
         // 定义一个自己的 String object 类型

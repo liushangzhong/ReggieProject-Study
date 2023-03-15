@@ -3,8 +3,8 @@ package com.anyi.reggie.dto;
 import lombok.Data;
 
 /**
- * @author 安逸i
- * @version 1.0
+ * @author
+ * @version
  */
 @Data
 public class LoginDto {

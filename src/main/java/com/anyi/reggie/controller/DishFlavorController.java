@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
  * 菜品口味关系表 前端控制器
  * </p>
  *
- * @author anyi
- * @since 2022-05-24
+ * @author
+ * @since
  */
 @RestController
 @RequestMapping("/dish-flavor")
