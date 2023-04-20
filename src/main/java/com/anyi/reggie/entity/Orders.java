@@ -18,8 +18,6 @@ import lombok.experimental.Accessors;
  * 订单表
  * </p>
  *
- * @author anyi
- * @since 2022-05-25
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -31,7 +29,7 @@ public class Orders implements Serializable {
 
     @ApiModelProperty(value = "主键")
 
-    private Long id;
+    private int id;
 
     @ApiModelProperty(value = "订单号")
     private String number;
@@ -43,7 +41,7 @@ public class Orders implements Serializable {
     private Long userId;
 
     @ApiModelProperty(value = "地址id")
-    private Long addressBookId;
+    private Integer addressBookId;
 
     @JsonFormat(pattern = "yyyy-MM-dd")
     @ApiModelProperty(value = "下单时间")

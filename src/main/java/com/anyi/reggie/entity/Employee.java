@@ -20,8 +20,6 @@ import lombok.experimental.Accessors;
  * 员工信息
  * </p>
  *
- * @author anyi
- * @since 2022-05-24
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -73,6 +71,4 @@ public class Employee implements Serializable {
     @TableField(fill = FieldFill.INSERT_UPDATE)//插入和更新时填充字段
     @ApiModelProperty(value = "修改人")
     private Long updateUser;
-
-
 }

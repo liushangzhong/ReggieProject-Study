@@ -14,8 +14,6 @@ import lombok.experimental.Accessors;
  * 用户信息
  * </p>
  *
- * @author anyi
- * @since 2022-05-25
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -32,8 +30,8 @@ public class User implements Serializable {
     @ApiModelProperty(value = "姓名")
     private String name;
 
-    @ApiModelProperty(value = "手机号")
-    private String phone;
+    @ApiModelProperty(value = "邮箱")
+    private String email;
 
     @ApiModelProperty(value = "性别")
     private String sex;

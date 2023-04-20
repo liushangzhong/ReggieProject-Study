@@ -1,12 +1,20 @@
 <component name="InspectionProjectProfileManager">
   <profile version="1.0">
     <option name="myName" value="Project Default" />
+    <inspection_tool class="DuplicatedCode" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <Languages>
+        <language minSize="54" name="Java" />
+      </Languages>
+    </inspection_tool>
     <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
-          <list size="2">
+          <list size="5">
             <item index="0" class="java.lang.String" itemvalue="v-if" />
             <item index="1" class="java.lang.String" itemvalue="v-else" />
+            <item index="2" class="java.lang.String" itemvalue="v-show" />
+            <item index="3" class="java.lang.String" itemvalue="v-loading" />
+            <item index="4" class="java.lang.String" itemvalue="@click" />
           </list>
         </value>
       </option>

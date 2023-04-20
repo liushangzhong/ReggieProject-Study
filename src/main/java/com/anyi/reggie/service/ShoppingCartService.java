@@ -1,8 +1,10 @@
 package com.anyi.reggie.service;
 
 import com.anyi.reggie.entity.ShoppingCart;
+import com.anyi.reggie.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -15,9 +17,11 @@ import java.util.List;
  */
 public interface ShoppingCartService extends IService<ShoppingCart> {
 
+
     void add(ShoppingCart shoppingCart);
 
-    List<ShoppingCart> getList();
-
+//    List<ShoppingCart> getList();
+     List<ShoppingCart> list(Long id);
     void sub(ShoppingCart shoppingCart);
+    List<ShoppingCart> listByUserId(Long id);
 }

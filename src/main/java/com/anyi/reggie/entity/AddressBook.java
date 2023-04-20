@@ -20,8 +20,6 @@ import lombok.experimental.Accessors;
  * 地址管理
  * </p>
  *
- * @author
- * @since
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -32,7 +30,7 @@ public class AddressBook implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty(value = "主键")
-    private Long id;
+    private Integer id;
 
     @ApiModelProperty(value = "用户id")
     private Long userId;

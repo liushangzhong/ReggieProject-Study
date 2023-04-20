@@ -12,8 +12,6 @@ import java.util.List;
  * 菜品管理 服务类
  * </p>
  *
- * @author anyi
- * @since 2022-05-24
  */
 public interface DishService extends IService<Dish> {
 
@@ -22,11 +20,11 @@ public interface DishService extends IService<Dish> {
 
     Page<DishDto> pageSearch(int page, int pageSize, String name);
 
-    DishDto getDishById(Long id);
+    DishDto getDishById(int id);
 
     void updateDish(DishDto dishDto);
 
     void deleteDish(String  ids);
 
-    List<DishDto> getList(Long categoryId, Integer status);
+    List<DishDto> getList(Integer categoryId, Integer status);
 }

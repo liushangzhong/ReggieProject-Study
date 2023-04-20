@@ -17,5 +17,8 @@ public interface OrdersService extends IService<Orders> {
 
     void addOrders(Orders orders);
 
-    Page<OrdersDto> userPage(Integer page, Integer pageSize);
+    Page<OrdersDto> userPage(int page, int pageSize);
+    Page<OrdersDto> page(int page, int pageSize);
+
+    void submit(Orders orders);
 }

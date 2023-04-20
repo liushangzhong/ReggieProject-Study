@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   height: 100%;
-  background-color: #333;
+  background-color: #9e8787;
 }
 .login-box {
   width: 1000px;
@@ -79,7 +79,7 @@
   font-weight: 500;
   font-size: 14px;
   border: 0;
-  background-color: #ffc200;
+  background-color: #e94e3c;
 }
 .login-btn:hover,
 .login-btn:focus {
@@ -99,3 +99,17 @@
   color: #333333;
   margin-left: 10px;
 }
+#login .divContainer .count {
+  position: absolute;
+  right: 20rem;
+  top: 20rem;
+  cursor: pointer;
+  opacity: 1;
+  font-size: 12rem;
+  font-family: PingFangSC, PingFangSC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #D8D8D8;	/*浅灰色*/
+  letter-spacing: 0px;
+}
+

@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>瑞吉外卖管理端</title>
-    <link rel="shortcut icon" href="favicon.ico">
+    <title>兴国红色外卖商城管理端</title>
+    <link rel="shortcut icon" href="favico1.ico">
     <!-- 引入样式 -->
     <link rel="stylesheet" href="plugins/element-ui/index.css" />
     <link rel="stylesheet" href="styles/common.css" />
@@ -32,7 +32,7 @@
         <div class="sidebar-container">
           <div class="logo">
             <!-- <img src="images/logo.png" width="122.5" alt="" /> -->
-            <img src="images/login/login-logo.png" alt="" style="width: 117px; height: 32px" />
+            <img src="images/login/logo2.jpg" alt="" style="width: 117px; height: 100px;" />
           </div>
 
           <el-scrollbar wrap-class="scrollbar-wrapper">
@@ -40,8 +40,8 @@
               :default-active="defAct"
               :unique-opened="false"
               :collapse-transition="false"
-              background-color="#343744"
-              text-color="#bfcbd9"
+              background-color="#FFFFFF"
+              text-color="#333333"
               active-text-color="#f4f4f5"
             >
               <div v-for="item in menuList" :key="item.id">
@@ -124,7 +124,7 @@
               //   children: [
                   {
                     id: '2',
-                    name: '员工管理',
+                    name: '商城员工管理',
                     url: 'page/member/list.html',
                     icon: 'icon-member'
                   },
@@ -136,7 +136,7 @@
                   },
                   {
                     id: '4',
-                    name: '菜品管理',
+                    name: '菜品商品管理',
                     url: 'page/food/list.html',
                     icon: 'icon-food'
                   },
@@ -148,7 +148,7 @@
                   },
                   {
                     id: '6',
-                    name: '订单明细',
+                    name: '商城订单明细',
                     url: 'page/order/list.html',
                     icon: 'icon-order'
                   }

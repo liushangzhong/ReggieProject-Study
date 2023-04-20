@@ -19,7 +19,7 @@ public interface SetmealService extends IService<Setmeal> {
 
     void add(SetmealDto setmealDto);
 
-    Page<SetmealDto> getPage(Integer page, Integer pageSize, String name);
+    Page<SetmealDto> getPage(int page, int pageSize, String name);
 
     SetmealDto getSetmeal(Long ids);
 

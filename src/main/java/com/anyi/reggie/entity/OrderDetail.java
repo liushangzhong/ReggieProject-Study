@@ -15,8 +15,6 @@ import lombok.experimental.Accessors;
  * 订单明细表
  * </p>
  *
- * @author anyi
- * @since 2022-05-25
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -27,7 +25,7 @@ public class OrderDetail implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty(value = "主键")
-    private Long id;
+    private int id;
 
     @ApiModelProperty(value = "名字")
     private String name;
@@ -36,13 +34,13 @@ public class OrderDetail implements Serializable {
     private String image;
 
     @ApiModelProperty(value = "订单id")
-    private Long orderId;
+    private Integer orderId;
 
     @ApiModelProperty(value = "菜品id")
-    private Long dishId;
+    private Integer dishId;
 
     @ApiModelProperty(value = "套餐id")
-    private Long setmealId;
+    private Integer setmealId;
 
     @ApiModelProperty(value = "口味")
     private String dishFlavor;

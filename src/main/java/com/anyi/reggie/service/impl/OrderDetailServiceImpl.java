@@ -3,8 +3,11 @@ package com.anyi.reggie.service.impl;
 import com.anyi.reggie.entity.OrderDetail;
 import com.anyi.reggie.mapper.OrderDetailMapper;
 import com.anyi.reggie.service.OrderDetailService;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * <p>
@@ -16,5 +19,10 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class OrderDetailServiceImpl extends ServiceImpl<OrderDetailMapper, OrderDetail> implements OrderDetailService {
-
+    @Override
+    public List<OrderDetail> findByOrderId(int id) {
+        LambdaQueryWrapper<OrderDetail> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(OrderDetail::getOrderId, id);
+        return this.list(queryWrapper);
+    }
 }

@@ -43,14 +43,11 @@ public class EmployeeController {
         if (user == null){
             return R.error("登录失败");
         }
-
-
         // 2. 判断密码是否 正确
         String password = SecureUtil.md5(employee.getPassword());
         if (!password.equals(user.getPassword())){
             return R.error("登录失败");
         }
-
         // 3. 判断用户是否被禁用
         if (user.getStatus() == 0){
             return R.error("登录失败");
@@ -79,13 +76,13 @@ public class EmployeeController {
             return  R.error( employee.getUsername() + "用户已经存在");
         }
         // 2. 填写创建用户信息，填写初始化密码
-        Long em = (Long)request.getSession().getAttribute("employee");
+        Long em = (Long) request.getSession().getAttribute("employee");
         UserContext.setUserId(em);
         employee.setPassword(SecureUtil.md5("123456"));
         //创建这个记录的用户id
         //employee.setCreateUser(em.getId());
         //更新这条记录的用户id
-         //employee.setUpdateUser(em.getId());
+        // employee.setUpdateUser(em.getId());
         // 3.存入到数据库
         employeeService.save(employee);
         log.info("新增员工，员工信息：{}", employee.toString());
@@ -170,7 +167,7 @@ public class EmployeeController {
      * @return
      */
     @GetMapping("/{id}")
-    public R getEmployeeById(@PathVariable Long id){
+    public R getEmployeeById(@PathVariable int id){
         Employee employee = employeeService.getById(id);
         if (employee != null){
             return R.success(employee);

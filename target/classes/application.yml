@@ -12,6 +12,19 @@ spring:
       url: jdbc:mysql://localhost:3306/reggie?serverTimezo ne=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
       username: root
       password: 123456
+  mail:
+    host: smtp.qq.com
+    # 你的QQ邮箱，这里为发件人，填自己的即可
+    username: 2430231446@qq.com
+    # 你的QQ邮箱授权码
+    password: cfbffuzkocwaecdj
+    default-encoding: UTF-8
+    from: 2430231446@qq.com
+
+
+
+
+
 
 
 mybatis-plus:
@@ -25,4 +38,5 @@ mybatis-plus:
   mapper-locations: classpath:xx/xx/xx/**/mapper/*.xml
 reggie:
   path: "E:/img/"
+
 

@@ -75,20 +75,21 @@ public class DishServiceImpl extends ServiceImpl<DishMapper, Dish> implements Di
         // 返回页面的分页
         Page<DishDto> dishDtoPage = new Page<>();
         //构造条件构造器
-        QueryWrapper<Dish> employeeQueryWrapper = new QueryWrapper<>();
+        QueryWrapper<Dish> dishQueryWrapper = new QueryWrapper<>();
         //排序条件
-        employeeQueryWrapper.orderByDesc("create_time");
+        dishQueryWrapper.orderByDesc("create_time");
         if(name !=null){
-            employeeQueryWrapper.like("name", name);
+            dishQueryWrapper.like("name", name);
         }
         // 查出信息
-        page(pageInfo, employeeQueryWrapper);
+        page(pageInfo, dishQueryWrapper);
         // 拷贝pageInfo对象到dishDtoPage
         BeanUtils.copyProperties(pageInfo, dishDtoPage);
 
         // 根据id查询出菜品名
         List<Dish> records = pageInfo.getRecords();
         //遍历并拷贝复制到disDto中，将categoryName属性插入到disDto中
+        System.out.println(records);
         List<DishDto> recordsDto = records.stream().map((item)->{
             DishDto dishDto = new DishDto();
             BeanUtils.copyProperties(item, dishDto);
@@ -107,7 +108,7 @@ public class DishServiceImpl extends ServiceImpl<DishMapper, Dish> implements Di
      * @return
      */
     @Override
-    public DishDto getDishById(Long id) {
+    public DishDto getDishById(int id) {
         // 根据id查询菜品信息
         DishDto dishDto = new DishDto();
         Dish dish = getById(id);
@@ -155,7 +156,7 @@ public class DishServiceImpl extends ServiceImpl<DishMapper, Dish> implements Di
     }
 
     @Override
-    public List<DishDto> getList(Long categoryId, Integer status) {
+    public List<DishDto> getList(Integer categoryId, Integer status) {
 
         String key = CommentRedis.DISH_PREFIX + categoryId + "_" + status;
 

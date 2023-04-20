@@ -8,10 +8,10 @@ import com.anyi.reggie.service.CategoryService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -31,7 +31,7 @@ public class CategoryController {
     private CategoryService categoryService;
 
     @Resource
-    private RedisTemplate redisTemplate;
+    private RedisTemplate<String, List<Category>> redisTemplate;
 
     /**
      * 分页查询
@@ -40,7 +40,7 @@ public class CategoryController {
      * @return
      */
     @GetMapping("/page")
-    public R page(Integer page,Integer pageSize){
+    public R<Page<Category>> page(int page, int pageSize){
         Page<Category> pageInfo = new Page<>(page,pageSize);
         QueryWrapper<Category> queryWrapper = new QueryWrapper<>();
         queryWrapper.orderByDesc("sort");
@@ -53,16 +53,35 @@ public class CategoryController {
      * @param category
      * @return
      */
+/*    @PostMapping
+    public R addCate(@RequestBody Category category){
+        try {
+            categoryService.save(category);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return R.success("添加分类成功");
+        }
+        return R.success("添加分类成功");
+    }*/
+
+
     @PostMapping
     public R addCate(@RequestBody Category category){
-        categoryService.save(category);
+        category.setCreateTime(new Date());
+        category.setUpdateTime(new Date());
+        try {
+            categoryService.save(category);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return R.error("添加分类失败");
+        }
         return R.success("添加分类成功");
     }
     /**
      * 删除分类
      */
     @DeleteMapping
-    public R delete( Long ids){
+    public R<String> delete(Long ids){
 
         categoryService.delete(ids);
         return R.success("删除成功");
@@ -72,7 +91,7 @@ public class CategoryController {
      * 更新分类信息
      */
     @PutMapping
-    public R update(@RequestBody Category category){
+    public R<String> update(@RequestBody Category category){
         categoryService.updateById(category);
         return R.success("更新分类信息成功");
     }
@@ -83,15 +102,14 @@ public class CategoryController {
      * @return
      */
     @GetMapping("/list")
-    public R list(Integer type){
+    public R<List<Category>> list(Integer type){
         String key = CommentRedis.CATEGORY_PREFIX + type;
-
-        List<Category> categories = (List<Category>) redisTemplate.opsForValue().get(key);
+        List<Category> categories = redisTemplate.opsForValue().get(key);
         if (categories !=null){
             return R.success(categories);
         }
         QueryWrapper<Category> wrapper = new QueryWrapper<>();
-        if(type !=null){
+        if(type != null ){
             wrapper.eq("type", type);
         }
         List<Category> list = categoryService.list(wrapper);

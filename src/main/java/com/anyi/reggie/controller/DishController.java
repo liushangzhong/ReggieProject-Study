@@ -48,7 +48,12 @@ public class DishController {
      */
     @PostMapping
     public R addDish(@RequestBody DishDto dishDto){
-        dishService.addDish(dishDto);
+        try {
+            dishService.addDish(dishDto);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return R.error("新增菜品失败！");
+        }
         return R.success("新增菜品成功！");
     }
 
@@ -72,7 +77,7 @@ public class DishController {
      * @return
      */
     @GetMapping("/{id}")
-    public R getDishById(@PathVariable Long id){
+    public R getDishById(@PathVariable int id){
         DishDto dishDto = dishService.getDishById(id);
         return R.success(dishDto);
     }
@@ -108,11 +113,11 @@ public class DishController {
      * @return
      */
     @PostMapping("/status/{status}")
-    public R changeStatus(@PathVariable int status,String ids){
+    public R changeStatus(@PathVariable Integer status,String ids){
         String[] idList = ids.split(",");
         for (String id : idList) {
             Dish dish = new Dish();
-            dish.setId(Long.parseLong(id));
+            dish.setId(Integer.parseInt(id));
             dish.setStatus(status);
             dishService.updateById(dish);
         }
@@ -126,9 +131,9 @@ public class DishController {
      * @return
      */
     @GetMapping("/list")
-    public R list(Long categoryId,Integer status){
-        List<DishDto> dishDtoList = dishService.getList(categoryId,status);
-        return R.success(dishDtoList);
+    public R list(Integer categoryId,Integer status){
+            List<DishDto> dishDtoList = dishService.getList(categoryId,status);
+            return R.success(dishDtoList);
     }
 }
 

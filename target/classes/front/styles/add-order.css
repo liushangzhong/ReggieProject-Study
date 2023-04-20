@@ -2,7 +2,7 @@
   width: 100%;
   height: 88rem;
   opacity: 1;
-  background: #333333;
+  background: #FFFFFF;
   position: relative;
 }
 
@@ -11,7 +11,7 @@
   font-family: PingFangSC, PingFangSC-Regular;
   font-weight: 500;
   text-align: center;
-  color: #ffffff;
+  color: #ba3737;
   line-height: 25rem;
   letter-spacing: 0;
   position: absolute;
@@ -238,7 +238,7 @@
   width: 345rem;
   height: 44rem;
   opacity: 1;
-  background: #000000;
+  background: #FFFFFF;
   border-radius: 25rem;
   box-shadow: 0rem 3rem 5rem 0rem rgba(0, 0, 0, 0.25);
   margin: 0 auto;
@@ -273,7 +273,7 @@
   font-family: DIN, DIN-Medium;
   font-weight: 500;
   text-align: left;
-  color: #ffffff;
+  color: #333333;
   letter-spacing: 0rem;
   position: absolute;
   left: 92rem;
@@ -305,7 +305,7 @@
 }
 #add_order .divCart .btnSubmitActive {
   color: #333333;
-  background: #ffc200;
+  background: #ba3737;
 }
 
 #add_order .divCart .divGoodsNum {

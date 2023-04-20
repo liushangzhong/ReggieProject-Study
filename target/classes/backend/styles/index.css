@@ -93,7 +93,7 @@
   margin-left: 20px;
   width: 28px;
   font-size: 14px;
-  color: #ffc200;
+  color: #e94e3c;
   cursor: pointer;
 }
 
@@ -191,7 +191,7 @@
 
 .logo {
   text-align: center;
-  background-color: rgb(52, 55, 68);
+  background-color: #FFFFFF;
   /* height: 100px;
   line-height: 100px;
   padding: 12px 5px; */
@@ -218,7 +218,7 @@
 .el-submenu > .el-submenu__title,
 .el-submenu .el-menu-item {
   min-width: 190px !important;
-  background-color: #272a36 !important;
+  background-color: #5975e8 !important;
 }
 /* .el-submenu > .el-submenu__title:hover, .el-submenu .el-menu-item:hover {
   background-color: #0e132b !important;
@@ -229,14 +229,14 @@
 } */
 
 .el-menu .el-menu-item {
-  color: #aeb5c4;
+  color: #333333;
   height: 42px;
   line-height: 42px;
 }
 .el-menu .el-menu-item {
   padding: 0 0 0 32px !important;
   margin: 0 34px 20px 0;
-  border-radius: 0 21px 21px 0 !important;
+  /*border-radius: 0 21px 21px 0 !important;*/
 }
 .el-menu .el-menu-item:hover {
   color: #ffffff !important;
@@ -255,9 +255,9 @@
 }
 
 .el-menu .el-menu-item.is-active {
-  background-color: #ffc200 !important;
+  background-color: #e94e3c !important;
   color: #333333 !important;
-  border-radius: 0 21px 21px 0 !important;
+  /*border-radius: 0 21px 21px 0 !important;*/
 }
 .el-menu .el-menu-item.is-active span {
   color: #333333 !important;

@@ -1,13 +1,23 @@
+body{
+
+  background: url('../images/666.jpg') no-repeat center center;
+  background-size: 100% 100%;
+  width: 100%;
+  min-height: 100%;
+  background-repeat: no-repeat;
+}
 #login .divHead {
   opacity: 1;
-  background: #333333;
-  height: 88rem;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
   width: 100%;
   font-size: 18rem;
   font-family: PingFangSC, PingFangSC-Regular;
-  font-weight: 500;
+  font-weight: 900;
   text-align: center;
-  color: #ffffff;
+  color: #f3f0f0;
   line-height: 88rem;
 }
 
@@ -45,7 +55,7 @@
   font-family: PingFangSC, PingFangSC-Regular;
   font-weight: 400;
   text-align: left;
-  color: #ffc200;
+  color: #93e6e8;
   letter-spacing: 0px;
 }
 
@@ -86,11 +96,11 @@
 }
 
 #login .btnPhone {
-  background: #ffc200;
+  background: #FFFFFF;
   color: #333333;
 }
 
 #login .btnPhone:active {
-  background: rgba(255, 142, 0, 1);
+  background: rgb(255, 255, 255);
   color: #333333;
 }

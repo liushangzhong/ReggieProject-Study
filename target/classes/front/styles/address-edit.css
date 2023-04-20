@@ -5,16 +5,16 @@
   width: 100%;
   height: 88rem;
   opacity: 1;
-  background: #333333;
+  background: #FFFFFF;
   position: relative;
 }
 
 #address_edit .divHead .divTitle {
   font-size: 18rem;
   font-family: PingFangSC, PingFangSC-Regular;
-  font-weight: 500;
+  font-weight: 800;
   text-align: center;
-  color: #ffffff;
+  color: #333333;
   line-height: 25rem;
   letter-spacing: 0;
   position: absolute;
@@ -130,13 +130,13 @@
 #address_edit .divContent .divSave {
   height: 36rem;
   opacity: 1;
-  background: #ffc200;
+  background: #bb2737;
   border-radius: 18rem;
   font-size: 15rem;
   font-family: PingFangSC, PingFangSC-Regular;
   font-weight: 500;
   text-align: center;
-  color: #333333;
+  color: #FFFFFF;
   line-height: 36rem;
   margin-top: 20rem;
 }

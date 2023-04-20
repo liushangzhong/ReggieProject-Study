@@ -52,7 +52,7 @@ public class SetmealServiceImpl extends ServiceImpl<SetmealMapper, Setmeal> impl
         // 将套餐含有菜品信息保存
         List<SetmealDish> setmealDishes = setmealDto.getSetmealDishes();
         setmealDishes = setmealDishes.stream().map(item->{
-            item.setSetmealId(setmealDto.getId().toString());
+            item.setSetmealId(setmealDto.getId());
             return item;
         }).collect(Collectors.toList());
         service.saveBatch(setmealDishes);
@@ -66,7 +66,7 @@ public class SetmealServiceImpl extends ServiceImpl<SetmealMapper, Setmeal> impl
      * @return
      */
     @Override
-    public Page<SetmealDto> getPage(Integer page, Integer pageSize, String name) {
+    public Page<SetmealDto> getPage(int page, int pageSize, String name) {
         // 分页查询
         Page<Setmeal> setmealPage = new Page<>(page,pageSize);
 
@@ -130,7 +130,7 @@ public class SetmealServiceImpl extends ServiceImpl<SetmealMapper, Setmeal> impl
         // 将套餐含有菜品信息保存
         List<SetmealDish> setmealDishes = setmealDto.getSetmealDishes();
         setmealDishes = setmealDishes.stream().map(item->{
-            item.setSetmealId(setmealDto.getId().toString());
+            item.setSetmealId(setmealDto.getId());
             return item;
         }).collect(Collectors.toList());
         service.saveOrUpdateBatch(setmealDishes);

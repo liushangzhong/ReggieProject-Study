@@ -33,13 +33,13 @@ public class Dish implements Serializable {
 //分类id
     @ApiModelProperty(value = "主键")
 
-    private Long id;
+    private Integer id;
 
     @ApiModelProperty(value = "菜品名称")
     private String name;
 
     @ApiModelProperty(value = "菜品分类id")
-    private Long categoryId;
+    private Integer categoryId;
 
     @ApiModelProperty(value = "菜品价格")
     private BigDecimal price;

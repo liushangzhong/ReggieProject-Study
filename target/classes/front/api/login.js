@@ -5,7 +5,13 @@ function loginApi(data) {
       data
     })
   }
-
+function sendMsgApi(data) {
+    return $axios({
+        'url': '/user/sendMsg',
+        'method': 'post',
+        data
+    })
+}
 function getPhoneCode(data) {
     return $axios({
         'url': '/user/code',

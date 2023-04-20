@@ -21,9 +21,6 @@ import lombok.experimental.Accessors;
  * <p>
  * 套餐菜品关系
  * </p>
- *
- * @author anyi
- * @since 2022-05-25
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -35,10 +32,10 @@ public class SetmealDish implements Serializable {
 
     @ApiModelProperty(value = "主键")
 
-    private Long id;
+    private int id;
 
     @ApiModelProperty(value = "套餐id ")
-    private String setmealId;
+    private Integer setmealId;
 
     @ApiModelProperty(value = "菜品id")
     private String dishId;

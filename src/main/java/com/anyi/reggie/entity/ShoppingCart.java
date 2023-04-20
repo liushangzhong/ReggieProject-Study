@@ -1,9 +1,10 @@
 package com.anyi.reggie.entity;
 
-import java.math.BigDecimal;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.IdType;
+
+import java.math.BigDecimal;
 import java.util.Date;
 
 import com.baomidou.mybatisplus.annotation.TableField;
@@ -19,9 +20,6 @@ import lombok.experimental.Accessors;
  * <p>
  * 购物车
  * </p>
- *
- * @author anyi
- * @since 2022-05-25
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -44,10 +42,10 @@ public class ShoppingCart implements Serializable {
     private Long userId;
 
     @ApiModelProperty(value = "菜品id")
-    private Long dishId;
+    private Integer dishId;
 
     @ApiModelProperty(value = "套餐id")
-    private Long setmealId;
+    private Integer setmealId;
 
     @ApiModelProperty(value = "口味")
     private String dishFlavor;

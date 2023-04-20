@@ -12,6 +12,7 @@ import java.util.List;
  * @author
  * @version
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
 public class DishDto extends Dish {
 

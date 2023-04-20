@@ -32,7 +32,7 @@ public class Category implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty(value = "主键")
-    private Long id;
+    private Integer id;
 
     @ApiModelProperty(value = "类型   1 菜品分类 2 套餐分类")
     private Integer type;
@@ -56,7 +56,9 @@ public class Category implements Serializable {
     @TableField(fill = FieldFill.INSERT)
     @ApiModelProperty(value = "创建人")
     private Long createUser;
+
     @TableField(fill = FieldFill.INSERT_UPDATE)
     @ApiModelProperty(value = "修改人")
     private Long updateUser;
+
 }
