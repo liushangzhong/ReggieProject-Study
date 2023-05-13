@@ -20,7 +20,4 @@ public interface UserService extends IService<User> {
     Boolean sendMsg(User user, HttpSession session) throws MessagingException;
     // 移动端用户登录
     User login(Map<String, String> map, HttpSession session);
-
-
-
 }

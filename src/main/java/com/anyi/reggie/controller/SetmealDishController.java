@@ -16,6 +16,5 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/reggie/setmeal-dish")
 public class SetmealDishController {
-
 }
 
